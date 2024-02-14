@@ -1,5 +1,6 @@
+
 class PlacesController < ApplicationController
-  
+skip_before_action :verify_authenticity_token 
   def index
     @places = Place.all
     # render :template => "tacos/index"
@@ -8,7 +9,7 @@ class PlacesController < ApplicationController
   def show
     # find a Place
     @place = Place.find_by({ "id" => params["id"] })
-    # find Contacts for the Company
+    # find Entries for the Company
     # render companies/show view with details about Company
   end
 
