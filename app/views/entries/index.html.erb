@@ -1,0 +1,13 @@
+<h1> All Entries </h1>
+
+<% for entry in @entries %>
+
+<h2><%= Place.find_by("id" => entry["place_id"]) %></h2>
+
+<h3><%= entry["title"] %></h3>
+
+<h4><%= entry["posted_on"] %></h4>
+
+<h5><%= entry["description"] %></h5>
+
+<%end%>

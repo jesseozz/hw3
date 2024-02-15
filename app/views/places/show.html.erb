@@ -2,11 +2,15 @@
 
 <h1><%= @place["name"] %></h1>
 
-<h2>Title</h2>
+<% for entry in entries %>
 
-<h3>posted_on Date</h3>
+<h3><%= entry["title"] %></h3>
 
-<h4>description</h4>
+<h4><%= entry["posted_on"] %></h4>
+
+<h5><%= entry["description"] %></h5>
+
+<% end %>
 
 <p>
   <a href="/entries/new">New Post</a>
