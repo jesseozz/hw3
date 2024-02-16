@@ -22,7 +22,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new
 
     # assign user-entered form data to Entry's columns
-    @entry["place_id"] = Place.find_by({ "id" => params["place"]})
+    @entry["place_id"] = @place["id"]
     @entry["title"] = params["title"]
     @entry["posted_on"] = params["posted_on"]
     @entry["description"] = params["description"]

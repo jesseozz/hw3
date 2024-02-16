@@ -3,6 +3,7 @@ class PlacesController < ApplicationController
 skip_before_action :verify_authenticity_token 
   def index
     @places = Place.all
+    @entries = Entry.all
     # render :template => "tacos/index"
   end
 
