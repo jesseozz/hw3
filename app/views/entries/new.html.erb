@@ -1,6 +1,6 @@
 <h1>New Post</h1>
 
-<form action="/places/1" method="post">
+<form action="/entries" method="post">
   <p>
     <label for="title">Title</label>
     <input type="text" name="title">
@@ -12,6 +12,9 @@
   <p>
     <label for="description">Description</label>
     <input type="text" name="description">
+  </p>
+  <p>
+    <input type="hidden" name="place_id" value="<%= @place["id"] %>">
   </p>
   <button>Submit</button>
 </form>
