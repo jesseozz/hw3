@@ -3,7 +3,6 @@ class PlacesController < ApplicationController
 skip_before_action :verify_authenticity_token 
   def index
     @places = Place.all
-    @entries = Entry.all
     # render :template => "tacos/index"
   end
 
@@ -11,6 +10,7 @@ skip_before_action :verify_authenticity_token
     # find a Place
     @place = Place.find_by({ "id" => params["id"] })
     # find Entries for the Company
+    @entries = Entry.where({ "place_id" => @place["id"] })
     # render companies/show view with details about Company
   end
 

@@ -8,9 +8,9 @@ class EntriesController < ApplicationController
   def show
     # find an entry
     @entry = Entry.find_by({ "id" => params["id"] })
-    @place = Place.find_by({ "id" => @entry["place_id"]})
-    # find Entries for the Company
-    # render companies/show view with details about Company
+    # find Entries for the Place
+    @place = Place.where({ "id" => @entry["place_id"]})
+    # render companies/show view with details about Place
   end
 
   def new
@@ -18,7 +18,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    # start with a new Place
+    # start with a new Entry
     @entry = Entry.new
 
     # assign user-entered form data to Entry's columns
